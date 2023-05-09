@@ -9,7 +9,7 @@ import AboutView from './views/AboutView.vue'
 <template>
   <div id="app">
     <div class="header">
-      <h1>Välkommen!</h1>
+      <h1>Bästa Affären</h1>
    
     </div>
       <div>

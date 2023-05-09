@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1>Products</h1>
+      <div>
+    <h1>{{ message }}</h1>
+  </div>
     <ul>
       <li v-for="product in products" :key="product.id">
         {{ product.name }} - {{ product.price }} 
@@ -16,6 +18,7 @@ export default {
     return {
       productClicks: {},
       products: [],
+      message: "Produkter",
     };
   },
   methods: {

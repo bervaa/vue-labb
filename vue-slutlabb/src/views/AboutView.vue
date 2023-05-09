@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1>About</h1>
+     <div>
+    <h1>{{ message }}</h1>
+  </div>
     <p>Total items: {{ totalClicks }}</p>
     <p>Total price: {{ totalPrice }}</p>
   </div>
@@ -20,6 +22,7 @@ export default {
     return {
       productClicks: {},
       products: [],
+      message: "Kassa",
     };
   },
   mounted() {
