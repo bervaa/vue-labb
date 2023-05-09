@@ -4,7 +4,7 @@
     <ul>
       <li v-for="product in products" :key="product.id">
         {{ product.name }} - {{ product.price }} 
-        <button @click="incrementProductClicks(product)">Click me!</button>
+        <button @click="incrementProductClicks(product)">Lägg till!</button>
       </li>
     </ul>
   </div>

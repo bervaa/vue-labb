@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>About</h1>
-    <p>Total clicks: {{ totalClicks }}</p>
+    <p>Total items: {{ totalClicks }}</p>
     <p>Total price: {{ totalPrice }}</p>
   </div>
 </template>

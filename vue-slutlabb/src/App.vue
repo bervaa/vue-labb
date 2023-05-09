@@ -6,12 +6,16 @@ import AboutView from './views/AboutView.vue'
 
 
 </script>
-
 <template>
-  <div>
+  <div id="app">
+    <div class="header">
+      <h1>Välkommen!</h1>
+   
+    </div>
+      <div>
     <nav>
       <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/about">About</RouterLink>
+      <RouterLink to="/about">Kassa</RouterLink>
     </nav>
 
     <RouterView />
@@ -19,7 +23,24 @@ import AboutView from './views/AboutView.vue'
    
       
  </div>
+  </div>
 </template>
+
+<script>
+export default {
+  name: "App"
+};
+</script>
+
+<style>
+/* Add your custom styles here */
+.header {
+  text-align: center;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+
 
 
 
