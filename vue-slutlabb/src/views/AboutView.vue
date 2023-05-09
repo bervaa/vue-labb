@@ -1,15 +1,42 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div>
+    <h1>About</h1>
+    <p>Total clicks: {{ totalClicks }}</p>
+    <p>Total price: {{ totalPrice }}</p>
   </div>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+<script>
+export default {
+  computed: {
+    totalClicks() {
+      return Object.values(this.productClicks).reduce((total, clicks) => total + clicks, 0);
+    },
+    totalPrice() {
+      return this.products.reduce((total, product) => total + product.price, 0);
+    },
+  },
+  data() {
+    return {
+      productClicks: {},
+      products: [],
+    };
+  },
+  mounted() {
+    fetch('/data.json')
+      .then(response => {
+        if (response.ok) {
+          return response.json()
+        } else {
+          throw new Error('Network response was not ok.')
+        }
+      })
+      .then(data => {
+        this.products = data
+      })
+      .catch(error => {
+        console.error('There was a problem fetching the data:', error)
+      })
+  },
+};
+</script>
