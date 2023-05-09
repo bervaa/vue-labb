@@ -10,6 +10,11 @@ import AboutView from './views/AboutView.vue'
   <div id="app">
     <div class="header">
       <h1>Bästa Affären</h1>
+      <div>
+    <label for="name-input">Vad heter du?</label>
+    <input id="name-input" type="text" v-model="name">
+    <p v-if="name">Välkommen, {{ name }}!</p>
+  </div>
    
     </div>
       <div>
@@ -28,7 +33,12 @@ import AboutView from './views/AboutView.vue'
 
 <script>
 export default {
-  name: "App"
+  name: "App",
+  data() {
+    return {
+      name: ''
+    }
+  }
 };
 </script>
 
