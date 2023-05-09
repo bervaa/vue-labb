@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Product A",
+    "description": "Lorem ipsum dolor sit amet",
+    "price": 10.99
+  },
+  {
+    "id": 2,
+    "name": "Product B",
+    "description": "Consectetur adipiscing elit",
+    "price": 5.99
+  },
+  {
+    "id": 3,
+    "name": "Product C",
+    "description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas",
+    "price": 15.99
+  },
+  {
+    "id": 4,
+    "name": "Product D",
+    "description": "Nulla facilisi. Ut eget imperdiet sapien. Donec ac euismod turpis",
+    "price": 12.49
+  },
+  {
+    "id": 5,
+    "name": "Product E",
+    "description": "Maecenas vitae nibh in nisl dapibus tempor. Sed vel metus dolor",
+    "price": 8.99
+  },
+  {
+    "id": 6,
+    "name": "Product F",
+    "description": "F Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed eu sapien interdum, iaculis elit vitae, placerat tellus",
+    "price": 12.99
+  },
+   {
+    "id": 7,
+    "name": "Product G",
+    "description": "G Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed eu sapien interdum, iaculis elit vitae, placerat tellus",
+    "price": 6.99
+  },
+   {
+    "id": 8,
+    "name": "Product H",
+    "description": "H Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed eu sapien interdum, iaculis elit vitae, placerat tellus",
+    "price": 7.99
+  },
+   {
+    "id": 9,
+    "name": "Product I",
+    "description": "I Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed eu sapien interdum, iaculis elit vitae, placerat tellus",
+    "price": 11.99
+  },
+   {
+    "id": 6,
+    "name": "Product J",
+    "description": "J Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed eu sapien interdum, iaculis elit vitae, placerat tellus",
+    "price": 9.99
+  }
+]
