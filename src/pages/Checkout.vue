@@ -6,6 +6,13 @@
     <p>Total items: {{ totalClicks }}</p>
     <p>Total price: {{ totalPrice }}</p>
   </div>
+  <label for="currencies">Choose a car:</label>
+
+<select name="currencies">
+  <option v-for="currency in currencies" :key="currency.name">
+    {{ currency.name }} - {{ currency.rate }}</option>
+
+</select>
 </template>
 
 <script>
@@ -22,10 +29,12 @@ export default {
     return {
       productClicks: {},
       products: [],
-      message: 'Kassa'
+      message: 'Kassa',
+      currencies: {},
+      avatar: 'fox@150px.jpeg'
     }
   },
-  mounted() {
+  async mounted() {
     fetch('/data.json')
       .then((response) => {
         if (response.ok) {
@@ -39,7 +48,14 @@ export default {
       })
       .catch((error) => {
         console.error('There was a problem fetching the data:', error)
-      })
+      });
+      const response = await fetch("https://www.floatrates.com/daily/usd.json");
+    if (!response.ok) {
+      throw new Error("Network response was not OK");
+    }
+    const myBlob = await response.json();
+    this.currencies = myBlob
+    console.log(myBlob)
   }
 }
 </script>

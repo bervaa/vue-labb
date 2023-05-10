@@ -1,36 +1,40 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-import HomeView from './views/HomeView.vue'
-import AboutView from './views/AboutView.vue'
+import PicCat from './components/PicCat.vue';
 </script>
 <template>
   <div id="app">
     <div class="header">
-      <h1>Bästa Affären</h1>
-      <div>
+      <h1 class="title">Bästa Affären</h1>
+      <div class="input-container">
+          <PicCat v-bind:image-url="catImageUrl"></PicCat>
         <label for="name-input">Vad heter du?</label>
         <input id="name-input" type="text" v-model="name" />
-        <p v-if="name">Välkommen, {{ name }}!</p>
+        <p v-if="name" class="welcome-text">Välkommen, {{ name }}!</p>
       </div>
     </div>
     <div>
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">Kassa</RouterLink>
+        <RouterLink to="/checkout">Kassa</RouterLink>
       </nav>
-
       <RouterView />
     </div>
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'App',
+  components: { PicCat },
+  
   data() {
     return {
-      name: ''
+      name: '',
+      catImageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTUQVmoOPBNYHglIkKn_f32atE3LMCSFM9SA&usqp=CAU",
+    
+
     }
   }
 }
@@ -45,30 +49,24 @@ export default {
 }
 </style>
 
+
+
 <style scoped>
 header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
   text-align: center;
-  margin-top: 2rem;
-}
+  background-color: #f2f2f2;
+  padding: 20px; }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+.title {
+  color: black;
+  
 }
+.input-container {
+  color: black;
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+}
+.welcome-text {
+  color: black;
 }
 
 nav a {
@@ -86,89 +84,6 @@ nav a:first-of-type {
     display: flex;
     place-items: center;
     padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style>
-
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
   }
 }
 </style>
