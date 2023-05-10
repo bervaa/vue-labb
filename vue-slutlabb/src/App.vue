@@ -3,57 +3,47 @@ import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 import HomeView from './views/HomeView.vue'
 import AboutView from './views/AboutView.vue'
-
-
 </script>
 <template>
   <div id="app">
     <div class="header">
       <h1>Bästa Affären</h1>
       <div>
-    <label for="name-input">Vad heter du?</label>
-    <input id="name-input" type="text" v-model="name">
-    <p v-if="name">Välkommen, {{ name }}!</p>
-  </div>
-   
+        <label for="name-input">Vad heter du?</label>
+        <input id="name-input" type="text" v-model="name" />
+        <p v-if="name">Välkommen, {{ name }}!</p>
+      </div>
     </div>
-      <div>
-    <nav>
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/about">Kassa</RouterLink>
-    </nav>
+    <div>
+      <nav>
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/about">Kassa</RouterLink>
+      </nav>
 
-    <RouterView />
-
-   
-      
- </div>
+      <RouterView />
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "App",
+  name: 'App',
   data() {
     return {
       name: ''
     }
   }
-};
+}
 </script>
 
 <style>
-/* Add your custom styles here */
+
 .header {
   text-align: center;
   background-color: #f2f2f2;
   padding: 20px;
 }
 </style>
-
-
-
-
 
 <style scoped>
 header {
@@ -118,8 +108,6 @@ nav a:first-of-type {
   }
 }
 </style>
-
-
 
 <style scoped>
 header {
