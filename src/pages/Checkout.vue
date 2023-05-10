@@ -3,12 +3,12 @@
     <div>
       <h1>{{ message }}</h1>
     </div>
-    <p>Total items: {{ totalClicks }}</p>
-    <p>Total price: {{ totalPrice }}</p>
+    <p>Produkter: {{ totalClicks }}</p>
+    <p>Totalt pris: {{ totalPrice }}</p>
+    <button @click="resetData">Töm kundvagn</button>
   </div>
-  <label for="currencies">Choose a car:</label>
-
-<select name="currencies">
+  <label for="currencies">Välj valuta:</label>
+    <select name="currencies">
   <option v-for="currency in currencies" :key="currency.name">
     {{ currency.name }} - {{ currency.rate }}</option>
 

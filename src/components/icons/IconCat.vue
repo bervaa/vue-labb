@@ -1,6 +1,6 @@
 <template>
     <div>
-      <img v-bind:src="imageUrl" alt="Cat Pic">
+      <img v-bind:src="imageUrl" alt="Cat Icon">
     </div>
   </template>
   

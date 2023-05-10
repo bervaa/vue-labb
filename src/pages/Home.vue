@@ -24,13 +24,14 @@ export default {
   methods: {
     incrementProductClicks(product) {
       if (this.productClicks[product.id]) {
-        this.productClicks[product.id]++
+        this.productClicks[product.id]++;
       } else {
-        this.productClicks[product.id] = 1
+        this.productClicks[product.id] = 1;
       }
-    }
+      this.$store.commit('updateTotalClicks', this.productClicks);
+    },
   },
-  mounted() {
+  async mounted() {
     fetch('/data.json')
       .then((response) => {
         if (response.ok) {

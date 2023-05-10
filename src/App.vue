@@ -1,13 +1,16 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import PicCat from './components/PicCat.vue';
+import IconCat from './components/icons/IconCat.vue'
 </script>
 <template>
   <div id="app">
     <div class="header">
+      <IconCat v-bind:image-url="catImageUrl2"></IconCat>
       <h1 class="title">Bästa Affären</h1>
       <div class="input-container">
-          <PicCat v-bind:image-url="catImageUrl"></PicCat>
+        <PicCat v-bind:image-url="catImageUrl"></PicCat>
+          
         <label for="name-input">Vad heter du?</label>
         <input id="name-input" type="text" v-model="name" />
         <p v-if="name" class="welcome-text">Välkommen, {{ name }}!</p>
@@ -33,6 +36,7 @@ export default {
     return {
       name: '',
       catImageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTUQVmoOPBNYHglIkKn_f32atE3LMCSFM9SA&usqp=CAU",
+      catImageUrl2: "https://cdn.iconscout.com/icon/premium/png-64-thumb/cat-236-515959.png?f=avif"
     
 
     }
@@ -77,6 +81,9 @@ nav a {
 
 nav a:first-of-type {
   border: 0;
+}
+nav a.router-link-exact-active {
+  color: var(--color-text);
 }
 
 @media (min-width: 1024px) {
