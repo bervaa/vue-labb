@@ -51,6 +51,12 @@ export default {
   background-color: #f2f2f2;
   padding: 20px;
 }
+.alert {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  margin-bottom: 10px;
+}
 </style>
 
 

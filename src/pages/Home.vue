@@ -6,9 +6,14 @@
     <ul>
       <li v-for="product in products" :key="product.id">
         {{ product.name }} - {{ product.price }}
-        <button @click="incrementProductClicks(product)">Lägg till!</button>
+        <button @click="addProduct(product)">Lägg till!</button>
       </li>
     </ul>
+  <div v-if="addedProduct" class="alert">
+    Tillagd i kundvagn: {{ addedProduct.name }} ({{ addedProduct.price }} SEK)
+  <br>
+    Total kostnad: {{ totalPrice }} SEK
+    </div>
   </div>
 </template>
 
@@ -16,6 +21,8 @@
 export default {
   data() {
     return {
+      addedProduct: null,
+      totalPrice: 0,
       productClicks: {},
       products: [],
       message: 'Produkter'
@@ -30,7 +37,12 @@ export default {
       }
       this.$store.commit('updateTotalClicks', this.productClicks);
     },
+    addProduct(product) {
+      this.addedProduct = product;
+      this.totalPrice += product.price;
   },
+  },
+  
   async mounted() {
     fetch('/data.json')
       .then((response) => {
