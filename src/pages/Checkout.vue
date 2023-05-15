@@ -31,7 +31,7 @@ export default {
       products: [],
       message: 'Kassa',
       currencies: {},
-      avatar: 'fox@150px.jpeg'
+    
     }
   },
   async mounted() {
